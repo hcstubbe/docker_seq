@@ -1,0 +1,8 @@
+!.gitignore
+*.fastq
+*.txt
+*.log
+!.fasta
+*.psl
+*.fa
+*.gtf
