@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y \
 	wget && \
 	apt-get autoclean && rm -rf /var/lib/apt/lists/*
 
-COPY scripts /app/
 
 RUN wget https://github.com/samtools/htslib/releases/download/1.12/htslib-1.12.tar.bz2
 RUN tar -vxjf htslib-1.12.tar.bz2
@@ -49,6 +48,9 @@ WORKDIR /app
 ENV PATH="$PATH:/app/htslib-1.12"
 ENV PATH="$PATH:/app/bcftools-1.12"
 ENV PATH="$PATH:/app/samtools-1.12"
+
+
+COPY scripts /app/
 
 
 CMD ["sh", "/app/samtools.sh"]
