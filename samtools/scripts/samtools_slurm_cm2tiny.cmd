@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J manda
+#SBATCH -J mm2
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
 #SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --get-user-env
@@ -14,4 +14,4 @@
 
 module load charliecloud
 
-ch-run -w ~/ccl_images/mandalorion -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh /app/mandalorion.sh
+ch-run -w ~/ccl_images/minimap2 -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh /app/minimap2.sh
