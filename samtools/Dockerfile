@@ -52,5 +52,6 @@ ENV PATH="$PATH:/app/samtools-1.12"
 
 COPY scripts /app/
 
+WORKDIR /app
 
 CMD ["sh", "/app/samtools.sh"]
