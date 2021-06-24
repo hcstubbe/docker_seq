@@ -3,7 +3,7 @@
 
 ## Pass positional variable(s)
 NTHREADS=$1
-NTHREADS="${NTHREADS:=4}"
+NTHREADS="${NTHREADS:=12}"
 echo "Processing with $NTHREADS thread(s)." 
 
 echo "Running minimap2." 
@@ -24,13 +24,13 @@ mkdir /mnt/0/output_samtools
 
 
 ## Run the script
-samtools view -Su /mnt/0/output_minimap2/out.SAM | samtools sort - /mnt/0/output_samtools/alns.sorted.BAM
-
+# samtools view -Su /mnt/0/output_minimap2/out.SAM | samtools sort /mnt/0/output_samtools/alns.sorted.BAM
+samtools view -Su /mnt/0/output_minimap2/out.SAM | samtools sort -o /mnt/0/output_samtools/alns.sorted.BAM
 
 echo "Running stringtie." 
 mkdir /mnt/0/output_stringtie
 
-stringtie /mnt/0/output_samtools/alns.sorted.BAM -o mkdir /mnt/0/output_stringtie/out.gtf
+stringtie /mnt/0/output_samtools/alns.sorted.BAM -o /mnt/0/output_stringtie/out.gtf
 
 echo "done!"							
 # Exit the script
