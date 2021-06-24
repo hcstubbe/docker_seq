@@ -77,11 +77,6 @@ RUN git clone https://github.com/rvolden/C3POa.git C3POa
 
 RUN git clone https://github.com/rvolden/Mandalorion mandalorion
 
-RUN git clone https://github.com/gpertea/stringtie
-WORKDIR /app/stringtie
-RUN make release
-WORKDIR /app
-
 
 COPY scripts /app
 
