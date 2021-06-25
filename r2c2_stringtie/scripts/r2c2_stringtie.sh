@@ -1,4 +1,4 @@
-#!/bin/bash
+  #!/bin/bash
 
 
 ## Pass positional variable(s)
@@ -30,7 +30,13 @@ samtools view -Su /mnt/0/output_minimap2/out.SAM | samtools sort -o /mnt/0/outpu
 echo "Running stringtie." 
 mkdir /mnt/0/output_stringtie
 
-stringtie /mnt/0/output_samtools/alns.sorted.BAM -o /mnt/0/output_stringtie/out.gtf
+stringtie /mnt/0/output_samtools/alns.sorted.BAM \
+                          -v \
+                          -p $NTHREADS \
+                          -G /mnt/1/gencode.v29.annotation.gtf \
+                          -A /mnt/0/output_stringtie/gene_abund.tab \
+                          -C /mnt/0/output_stringtie/cov_refs.gtf \
+                          -o /mnt/0/output_stringtie/out.gtf
 
 echo "done!"							
 # Exit the script
