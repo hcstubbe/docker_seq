@@ -32,7 +32,7 @@ RUN mkdir /app/igblast
 RUN mkdir /app/igblast/bin
 
 # Download IgBLAST from NCBI
-# Download and extract IgBLAST (code from https://changeo.readthedocs.io/en/stable/examples/igblast.html)
+# Download and extract IgBLAST 
 ENV VERSION="1.17.0"
 RUN  cd /app/igblast && \
 	wget ftp://ftp.ncbi.nih.gov/blast/executables/igblast/release/${VERSION}/ncbi-igblast-${VERSION}-x64-linux.tar.gz  && \
@@ -40,19 +40,19 @@ RUN  cd /app/igblast && \
 	cp ncbi-igblast-${VERSION}/bin/* /app/igblast/bin   && \
 	rm ncbi-igblast-${VERSION}-x64-linux.tar.gz
 	
-# Download reference databases and setup IGDATA directory 
-COPY scripts /app/igblast/scripts	
-RUN /app/igblast/scripts/fetch_igblastdb.sh -o /app/igblast/data && \
-	cp -r /app/igblast/ncbi-igblast-${VERSION}/internal_data /app/igblast/data && \
-	cp -r /app/igblast/ncbi-igblast-${VERSION}/optional_file /app/igblast/data && \
-	# Build IgBLAST database from IMGT reference sequences && \
-	/app/igblast/scripts/fetch_imgtdb.sh -o /app/igblast/data/germlines/imgt && \
-	/app/igblast/scripts/imgt2igblast.sh -i /app/igblast/data/germlines/imgt -o /app/igblast/data/igblast
+# Download reference databases and setup IGDATA directory (code from https://changeo.readthedocs.io/en/stable/examples/igblast.html)
+# COPY scripts /app/igblast/scripts	
+# RUN /app/igblast/scripts/fetch_igblastdb.sh -o /app/igblast/data && \
+# 	cp -r /app/igblast/ncbi-igblast-${VERSION}/internal_data /app/igblast/data && \
+# 	cp -r /app/igblast/ncbi-igblast-${VERSION}/optional_file /app/igblast/data && \
+# 	# Build IgBLAST database from IMGT reference sequences && \
+# 	/app/igblast/scripts/fetch_imgtdb.sh -o /app/igblast/data/germlines/imgt && \
+# 	/app/igblast/scripts/imgt2igblast.sh -i /app/igblast/data/germlines/imgt -o /app/igblast/data/igblast
 
 ENV PATH="$PATH:/app/igblast/bin/"
 
 COPY scripts /app/scripts
 
-
+RUN pyir setup
 
 CMD ["sh", "/app/scripts/igblast.sh"]
