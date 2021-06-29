@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J strt
+#SBATCH -J pyir
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
 #SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --get-user-env
@@ -14,4 +14,4 @@
 
 module load charliecloud
 
-ch-run -w ~/ccl_images/r2c2_stringtie -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh /app/r2c2_stringtie.sh
+ch-run -w ~/ccl_images/pyir -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh pyir /mnt/0/output_c3poa/UMI_Splint_1/R2C2_Consensus.fasta
