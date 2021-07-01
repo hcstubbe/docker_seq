@@ -31,8 +31,7 @@ RUN pip3 install tqdm  && \
 RUN mkdir /app/igblast
 RUN mkdir /app/igblast/bin
 
-# Download IgBLAST from NCBI
-# Download and extract IgBLAST 
+
 ENV VERSION="1.17.0"
 RUN  cd /app/igblast && \
 	wget ftp://ftp.ncbi.nih.gov/blast/executables/igblast/release/${VERSION}/ncbi-igblast-${VERSION}-x64-linux.tar.gz  && \
