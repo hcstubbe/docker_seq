@@ -28,7 +28,6 @@ RUN apt-get update -qq && \
 
 COPY config/requirements_python.txt requirements_python.txt
 COPY config/config_c3poa.cfg /app/
-COPY config/config_mandalorion.cfg /app/
 COPY data /app/data
 
 
@@ -73,9 +72,6 @@ RUN rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/blat
 
 
 RUN git clone https://github.com/rvolden/C3POa.git C3POa
-
-
-RUN git clone https://github.com/rvolden/Mandalorion mandalorion
 
 
 COPY scripts /app
