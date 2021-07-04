@@ -23,10 +23,18 @@ enroot remove --force $(enroot list)
 
 ## Starting enroot container using SLURM
 
-Interactive session (example - pls modify):
+Submitting SLURM script:
 ```Bash
-srun --pty --container-mounts=./data-test:/mnt/data-test \
-     --container-name=horovod \
-     --container-image='horovod/horovod+0.16.4-tf1.12.0-torch1.1.0-mxnet1.4.1-py3.5' \
-     bash
- ```
+sbatch [SCRIPT NAME].sbatch
+```
+
+
+Inspect SLURM jobs:
+```Bash
+squeue -u [USER NAME]
+```
+
+Cancel SLURM script:
+```Bash
+scancel [JOB ID]
+```
