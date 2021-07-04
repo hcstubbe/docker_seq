@@ -25,13 +25,16 @@ enroot remove --force $(enroot list)
 
 Submitting SLURM script:
 ```Bash
-
+sbatch [SCRIPT NAME].sbatch
 ```
 
-Interactive session (example - pls modify):
+
+Inspect SLURM jobs:
 ```Bash
-srun --pty --container-mounts=./data-test:/mnt/data-test \
-     --container-name=horovod \
-     --container-image='horovod/horovod+0.16.4-tf1.12.0-torch1.1.0-mxnet1.4.1-py3.5' \
-     bash
- ```
+squeue -u [USER NAME]
+```
+
+Cancel SLURM script:
+```Bash
+scancel [JOB ID]
+```
