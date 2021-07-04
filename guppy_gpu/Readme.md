@@ -1,4 +1,4 @@
- ## Using enroot to pull custom docker images
+ ## Using enroot with custom docker images
  
 To import a custom image from the [standard docker repository](https://hub.docker.com/):
 ```Bash
