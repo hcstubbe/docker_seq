@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 		lsb && \
 		apt-get autoclean && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install tqdm  && \
+RUN pip3 install tqdm matplotlib  && \
 	git clone https://github.com/crowelab/PyIR  && \
 	cd PyIR && \
 	pip3 install .

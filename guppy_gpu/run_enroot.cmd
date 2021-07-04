@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -N 1
-#SBATCH -p dgx
+#SBATCH -p dgx-1-v100
 #SBATCH --gres=gpu:8
 #SBATCH --ntasks=8
 #SBATCH -o enroot_test.out
