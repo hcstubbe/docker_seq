@@ -2,17 +2,17 @@
  
 To import a custom image from the [standard docker repository](https://hub.docker.com/):
 ```Bash
-enroot import --output [FILENAME].sqsh docker://[USER NAME]@registry.hub.docker.com#[USERNAME]/[REPOSITORY]
+enroot import --output [IMAGE NAME].sqsh docker://[USER NAME]@registry.hub.docker.com#[USERNAME]/[IMAGE NAME]
 ```
 
 To create enroot container:
 ```Bash
-enroot create [FILENAME].sqsh
+enroot create [IMAGE NAME].sqsh
 ```
 
-To start enrrot container:
+To start enroot container:
 ```Bash
-enroot start [FILENAME]
+enroot start [IMAGE NAME]
 ```
 
 To remove all enroot containers:
