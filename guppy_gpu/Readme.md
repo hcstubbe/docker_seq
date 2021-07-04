@@ -5,6 +5,11 @@ To import a custom image from the [standard docker repository](https://hub.docke
 enroot import --output [FILENAME].sqsh docker://[USER NAME]@registry.hub.docker.com#[USERNAME]/[REPOSITORY]
 ```
 
+To create enroot container:
+```Bash
+enroot create [FILENAME].sqsh
+```
+
 To remove all enroot containers:
 
 ```Bash
