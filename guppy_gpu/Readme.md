@@ -23,6 +23,11 @@ enroot remove --force $(enroot list)
 
 ## Starting enroot container using SLURM
 
+Submitting SLURM script:
+```Bash
+
+```
+
 Interactive session (example - pls modify):
 ```Bash
 srun --pty --container-mounts=./data-test:/mnt/data-test \
