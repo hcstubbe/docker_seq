@@ -10,6 +10,11 @@ To create enroot container:
 enroot create [FILENAME].sqsh
 ```
 
+To start enrrot container:
+```Bash
+enroot start [FILENAME]
+```
+
 To remove all enroot containers:
 
 ```Bash
