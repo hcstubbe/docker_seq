@@ -14,4 +14,4 @@
 
 module load charliecloud
 
-ch-run -w ~/ccl_images/c3poa -b ~/seq_data/CORKUM_12/ -- sh /app/c3poa.sh 24 900 450 1000
+ch-run -w ~/ccl_images/c3poa -b ~/seq_data/[SAMPLE ID]/ -- sh /app/c3poa.sh 24 900 450 1000
