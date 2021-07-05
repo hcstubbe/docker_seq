@@ -4,11 +4,6 @@ The repository for C3POa can be found [here](https://github.com/rvolden/C3POa).
 
 For more information check out the web page of the [Vollmers Lab in the Biomolecular Engineering Department at UC Santa Cruz](https://vollmerslab.soe.ucsc.edu/).
 
-## Rationale for using docker
-- Ease of use: dependencies are installed automatically when building the image; after building and testing, the image can be moved between machines/servers
-- Reproducibility: once the image is build, behaviour is stable across machines/servers; behaviour does not change when using the image later
-- Scalabiliy: test on a local machine/laptop, run on a workstation/high performance computing server
-
 ## Software requirements for running the docker image
 - [Docker](https://docs.docker.com/get-docker/)
 - [Charliecloud (optional)](https://hpc.github.io/charliecloud/)
