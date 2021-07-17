@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J pipel
+#SBATCH -J pipe
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
 #SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --get-user-env
