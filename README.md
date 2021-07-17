@@ -2,9 +2,9 @@
  Dockerfiles for sequencing data pipeline
 
 ## Docker images
-- c3poa: consensus calling of r2c2 reads
-- guppy_gpu: base calling of minion raw data with gpu acceleration
-- longread_stringtie: pipeline for analyzing long reads using stringtie
+- c3poa: consensus calling of [r2c2](https://vollmerslab.soe.ucsc.edu/) reads
+- guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
+- longread_stringtie: pipeline for analyzing long reads using [stringtie](http://ccb.jhu.edu/software/stringtie/)
 
 ## Rationale for using docker
 - Ease of use: dependencies are installed automatically when building the image; after building and testing, the image can be moved between machines/servers
