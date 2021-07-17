@@ -7,6 +7,6 @@
 - Scalabiliy: test on a local machine/laptop, run on a workstation/high performance computing server
 
 ## Docker images
-- [www.url.de](c3poa): consensus calling of r2c2 reads
+- c3poa: consensus calling of r2c2 reads
 - guppy_gpu: base caller for minion raw data
 - longread_stringtie: pipeline for analyzing long reads using stringtie
