@@ -14,4 +14,4 @@
 
 module load charliecloud
 
-ch-run -w ~/ccl_images/r2c2_stringtie -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh /app/r2c2_stringtie.sh
+ch-run -w ~/ccl_images/r2c2_stringtie -b ~/seq_data/test_data/  -b ~/seq_data/ref_data/ -- sh /app/r2c2_stringtie.sh 24
