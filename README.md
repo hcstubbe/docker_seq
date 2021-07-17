@@ -16,5 +16,9 @@
 Convert docker image c3poa and export to tar using [charliecloud](https://hpc.github.io/charliecloud/).
 
 ```bash
-ch-docker2tar c3poa ~/
+ch-docker2tar [DOCKER IMAGE] ~/
+```
+
+```bash
+ch-tar2dir [CHARLIE CLOUD IMAGE].tar.gz /path/to/destination
 ```
