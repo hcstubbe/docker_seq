@@ -2,14 +2,14 @@
 
 # FROM python:3.8-buster
 
-FROM ubuntu:20.04
-
-ARG VERSION="2.18"
+FROM ubuntu:21.04
 
 RUN apt-get update && apt-get install -y \
+		wget \
+		curl \
 		minimap2 \
-		samtools \
-		stringtie && \
+		stringtie \
+		samtools && \
 		apt-get autoclean && rm -rf /var/lib/apt/lists/*
 		
 COPY scripts /app/
