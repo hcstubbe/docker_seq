@@ -2,14 +2,14 @@
  Dockerfiles for sequencing data pipeline
 
 ## Docker images
+- guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
 - c3poa: consensus calling of [r2c2](https://vollmerslab.soe.ucsc.edu/) reads
 - PyIR: align B and T cell receptor sequences using [IgBLAST](https://ncbi.github.io/igblast/) implemented by [PyIR](https://github.com/crowelab/PyIR).
-- guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
 - longread_stringtie: pipeline for analyzing long reads using [stringtie](http://ccb.jhu.edu/software/stringtie/)
 
 ## How to run the pipeline
 - Load the required images (e.g. as charliecloud images)
-- Run the docker containers on the data in the following order: (1) guppy_gpu, (2) PyIR, (3) c3poa, and (4) longread_stringtie.
+- Run the docker containers on the data in the following order: (1) guppy_gpu, (2) c3poa, (3) PyIR, and (4) longread_stringtie.
 - On a SLURM managed cluster, you can run the SLURM script run_pipeline.cmd after installing the images as charliecloud images (see below).
 
 ## Rationale for using docker
