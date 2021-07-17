@@ -6,6 +6,12 @@
 - guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
 - longread_stringtie: pipeline for analyzing long reads using [stringtie](http://ccb.jhu.edu/software/stringtie/)
 
+## How to run the pipeline
+- Clone this repository to the local machine/server
+- Load the required images (e.g. as charliecloud images)
+- Run the docker containers on the data in the following order: (1) guppy_gpu, (2) c3poa, and (3) longread_stringtie.
+- On a SLURM managed cluster, you can run the SLURM script run_pipeline.cmd after installing the images as charliecloud images (see below).
+
 ## Rationale for using docker
 - Ease of use: dependencies are installed automatically when building the image; after building and testing, the image can be moved between machines/servers
 - Reproducibility: once the image is build, behaviour is stable across machines/servers; behaviour does not change when using the image later
