@@ -19,6 +19,28 @@ Convert docker image c3poa and export to tar using [charliecloud](https://hpc.gi
 ch-docker2tar [DOCKER IMAGE] ~/
 ```
 
+
+Untar image.
 ```bash
 ch-tar2dir [CHARLIE CLOUD IMAGE].tar.gz /path/to/destination
+```
+
+Run the image on the server using charliecloud.
+```bash
+ch-run -w /path/to/destination/[IMAGE] -b ~/path/to/data/ -- sh [SOME SCRIPT].sh
+```
+
+Submit image to SLURM manager.
+```bash
+sbatch /path/to/script/[SOME SLURM SCRIPT].cmd
+```
+
+Inspect SLURM queue.
+```bash
+squeue --clusters=<cluster name>
+```
+
+Inspect SLURM run by id.
+```bash
+scontrol --clusters=<cluster name> show jobid=<job id>
 ```
