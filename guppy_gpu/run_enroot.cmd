@@ -6,5 +6,5 @@
 #SBATCH -o enroot_test.out
 #SBATCH -e enroot_test.err
  
-srun --mpi=pmi2 --container-mounts=~/test_data/co_07:/data/ \
-     --container-image='guppy_gpu'
+srun --mpi=pmi2 --container-mounts=~/path/to/data/:/data/ \
+     --container-image='hstubbe/guppy_gpu'
