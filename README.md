@@ -7,7 +7,6 @@
 - longread_stringtie: pipeline for analyzing long reads using [stringtie](http://ccb.jhu.edu/software/stringtie/)
 
 ## How to run the pipeline
-- Clone this repository to the local machine/server
 - Load the required images (e.g. as charliecloud images)
 - Run the docker containers on the data in the following order: (1) guppy_gpu, (2) c3poa, and (3) longread_stringtie.
 - On a SLURM managed cluster, you can run the SLURM script run_pipeline.cmd after installing the images as charliecloud images (see below).
