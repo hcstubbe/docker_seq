@@ -8,5 +8,5 @@
 
 ## Docker images
 - c3poa: consensus calling of r2c2 reads
-- guppy_gpu: base caller for minion raw data
+- guppy_gpu: basecaller for minion raw data using gpu
 - longread_stringtie: pipeline for analyzing long reads using stringtie
