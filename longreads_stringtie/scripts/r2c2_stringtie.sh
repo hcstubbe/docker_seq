@@ -36,7 +36,8 @@ stringtie /mnt/0/output_samtools/alns.sorted.BAM \
                           -G /mnt/1/gencode.v29.annotation.gtf \
                           -A /mnt/0/output_stringtie/gene_abund.tab \
                           -C /mnt/0/output_stringtie/cov_refs.gtf \
-                          -o /mnt/0/output_stringtie/out.gtf
+                          -o /mnt/0/output_stringtie/out.gtf \
+						  -L
 
 echo "done!"							
 # Exit the script
