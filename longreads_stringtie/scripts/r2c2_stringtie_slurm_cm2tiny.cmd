@@ -8,7 +8,7 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=24
 #SBATCH --mail-type=end
-#SBATCH --mail-user=hstubbe@med.lmu.de
+#SBATCH --mail-user=[ENTER VALID MAIL ADDRESS]
 #SBATCH --export=NONE
 #SBATCH --time=12:00:00
 
