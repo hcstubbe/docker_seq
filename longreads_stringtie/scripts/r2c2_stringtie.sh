@@ -35,7 +35,8 @@ stringtie   -p $NTHREADS \
             -o /mnt/0/output_stringtie/out.gtf \
             -l STRG \
             -L \
-            /mnt/0/output_samtools/alns.sorted.BAM \
+            -v \
+            /mnt/0/output_samtools/alns.sorted.BAM
 
 echo "done!"							
 # Exit the script
