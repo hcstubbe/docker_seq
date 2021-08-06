@@ -1,0 +1,4 @@
+/mnt/0/[SAMPLE_FOLDER]/output_stringtie/out.gtf
+/mnt/0/[SAMPLE_FOLDER]/output_stringtie/out.gtf
+/mnt/0/[SAMPLE_FOLDER]/output_stringtie/out.gtf
+/mnt/0/[SAMPLE_FOLDER]/output_stringtie/out.gtf
