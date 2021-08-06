@@ -5,7 +5,6 @@ args_input = commandArgs(trailingOnly=TRUE)
 
       #### Load required packages ####
       library(ballgown)
-      library(RSkittleBrewer)
       library(genefilter)
       library(dplyr)
       library(devtools)
