@@ -10,7 +10,7 @@
 #SBATCH --mail-type=end
 #SBATCH --mail-user=[ENTER VALID E-MAIL]
 #SBATCH --export=NONE
-#SBATCH --time=12:00:00
+#SBATCH --time=01:00:00
 
 
 module load charliecloud
