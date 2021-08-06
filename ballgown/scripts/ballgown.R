@@ -7,7 +7,6 @@ args_input = commandArgs(trailingOnly=TRUE)
       library(ballgown)
       library(genefilter)
       library(dplyr)
-      library(devtools)
 
 
 
