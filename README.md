@@ -10,7 +10,7 @@
 
 ## How to run the pipeline
 - Load the required images (e.g. as charliecloud images)
-- Run the docker containers on the data in the following order: (1) guppy_gpu, (2) c3poa, (3) PyIR, and (4) longread_stringtie (5) ballgown.
+- Run the docker containers on the data in the following order: (1) guppy_gpu, (2) c3poa, (3) PyIR, (4) longread_stringtie, and (5) ballgown.
 - On a SLURM managed cluster, you can run the SLURM script run_pipeline.cmd after installing the images as charliecloud images (see below).
 
 ## Rationale for using docker
