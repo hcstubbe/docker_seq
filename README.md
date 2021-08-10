@@ -3,6 +3,7 @@
 
 ## Docker images
 - guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
+- bonito_gpu: base calling [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration using the [bonito base caller](https://github.com/nanoporetech/bonito).
 - c3poa: consensus calling of [r2c2](https://vollmerslab.soe.ucsc.edu/) reads
 - PyIR: align B and T cell receptor sequences using [IgBLAST](https://ncbi.github.io/igblast/) implemented by [PyIR](https://github.com/crowelab/PyIR)
 - longread_stringtie: pipeline for analyzing long reads using [stringtie](http://ccb.jhu.edu/software/stringtie/)
