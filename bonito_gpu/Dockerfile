@@ -1,7 +1,6 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
 FROM nvidia/cuda:11.1-base-ubuntu18.04
 
-ARG PACKAGE_VERSION=5.0.11
 ARG BUILD_PACKAGES="wget apt-transport-https"
 ARG DEBIAN_FRONTEND=noninteractive
 
