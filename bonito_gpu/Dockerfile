@@ -22,7 +22,7 @@ ENV PATH=/venv/bin:$PATH
 
 RUN pip3 install --no-cache-dir -U install setuptools pip
 RUN pip3 install --no-cache-dir "cupy-cuda102==8.6.0"
-COPY requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN pip3 install --no-cache-dir "ont-bonito==0.4.0"
 
