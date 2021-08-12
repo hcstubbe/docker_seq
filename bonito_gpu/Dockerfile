@@ -4,7 +4,7 @@ FROM nvidia/cuda:10.2-base-ubuntu18.04
 # Install required ubuntu dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      python3.9 \
+      python3.8 \
       python3-pip \
       git \
       build-essential \
