@@ -9,7 +9,8 @@ RUN : \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         git \ 
         zlib1g-dev \
-        python3.8-dev \
+        python3-dev \
+        python3-pip \
         software-properties-common \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         python3-venv \
