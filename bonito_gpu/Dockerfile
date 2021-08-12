@@ -1,9 +1,17 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
-FROM cupy/cupy:v8.6.0
+FROM nvidia/cuda:10.2-cudnn8-devel
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-    git
+    python3.8 \
+    python3-dev \
+    python3-pip \
+    python3-wheel \
+    python3-setuptools && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
+RUN pip3 install --no-cache-dir -U install setuptools pip
+RUN pip3 install --no-cache-dir "cupy-cuda102[all]==8.6.0"
 
 RUN git clone https://github.com/nanoporetech/bonito.git && \
     cd /bonito && \
