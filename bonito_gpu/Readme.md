@@ -1,5 +1,5 @@
 ## Building the docker image:
-The Docker image has to be **build on a system with CUDA driver installed**. Otherwise, the installation (with cupy-cuda102==8.6.0) will throw an error. 
+The Docker image has to be ***build on a system with CUDA driver installed***. Otherwise, the installation (with cupy-cuda102==8.6.0) will throw an error. 
 
 ```bash
 git clone https://github.com/hcstubbe/docker_seq
