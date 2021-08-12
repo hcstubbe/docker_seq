@@ -22,23 +22,6 @@ ENV PATH=/venv/bin:$PATH
 
 RUN pip3 install --no-cache-dir -U install setuptools pip
 RUN pip3 install --no-cache-dir "cupy-cuda102==8.6.0"
-
-# Install dependencies:
-COPY requirements.txt .
-# RUN pip install ont-bonito==0.4.0
-
-
-#RUN git clone https://github.com/nanoporetech/bonito.git && \
-#    cd /bonito && \
-#    python3 setup.py develop && \
-#    bonito download --models
-    
-# RUN apt-get autoremove --purge --yes && \
-#    apt-get clean
-
-
-#COPY requirements.txt requirements.txt
-
-#RUN pip3 install -r requirements.txt
+RUN pip install --no-cache-dir ont-bonito==0.4.0
 
 # CMD ["bonito", "--input_path", "/data/fast5/", "--save_path", "/data/output/", "--flowcell", "FLO-MIN106", "--kit", "SQK-LSK109", "--min_qscore", "7", "--device", "cuda:0"]
