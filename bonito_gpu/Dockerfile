@@ -5,8 +5,9 @@ ARG BUILD_PACKAGES="wget apt-transport-https"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install --yes $BUILD_PACKAGES libnvidia-compute-460-server python3 python3-pip && \ 
-    rm *.deb && \
+    apt-get install --yes $BUILD_PACKAGES libnvidia-compute-460-server python3 python3-pip 
+    
+RUN rm *.deb && \
     apt-get autoremove --purge --yes && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
