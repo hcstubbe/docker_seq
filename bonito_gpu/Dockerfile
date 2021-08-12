@@ -1,23 +1,12 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
-FROM nvidia/cuda:10.2-base-ubuntu18.04
+FROM cupy/cupy:v8.6.0
 
-# Install required ubuntu dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-      python3.8 \
-      python3-pip \
-      git \
-      build-essential \
-      python3-dev \
-      libz-dev
-
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install setuptools && \
-    python3 -m pip install wheel 
-    
 RUN git clone https://github.com/nanoporetech/bonito.git && \
     cd /bonito && \
-    python3 -m pip install -r requirements.txt 
+    python3 -m pip install -r requirements.txt && \
+    python3 setup.py develop && \
+    bonito download --models
+    
 # RUN apt-get autoremove --purge --yes && \
 #    apt-get clean
 
