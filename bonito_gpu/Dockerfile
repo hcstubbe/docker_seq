@@ -16,12 +16,17 @@ RUN apt-get update && \
 	cmake \
 	python3 \
 	python3-pip
-    
-RUN apt-get autoremove --purge --yes && \
-    apt-get clean
 
-COPY requirements.txt requirements.txt
+RUN git clone https://github.com/nanoporetech/bonito.git && \
+    cd bonito && \
+    python3 -m venv venv3 && \
+    source venv3/bin/activate
 
-RUN pip3 install -r requirements.txt
+# RUN apt-get autoremove --purge --yes && \
+#    apt-get clean
+
+# COPY requirements.txt requirements.txt
+
+# RUN pip3 install -r requirements.txt
 
 # CMD ["bonito", "--input_path", "/data/fast5/", "--save_path", "/data/output/", "--flowcell", "FLO-MIN106", "--kit", "SQK-LSK109", "--min_qscore", "7", "--device", "cuda:0"]
