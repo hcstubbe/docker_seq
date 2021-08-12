@@ -15,8 +15,7 @@ RUN apt-get update && \
 	gcc \
 	cmake \
 	python3 \
-	python3-pip \
-	python-is-python3 
+	python3-pip
     
 RUN apt-get autoremove --purge --yes && \
     apt-get clean
