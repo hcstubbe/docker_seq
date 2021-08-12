@@ -10,6 +10,8 @@ RUN apt-get update && \
 RUN apt-get autoremove --purge --yes && \
     apt-get clean
 
+COPY requirements.txt requirements.txt
+
 RUN pip3 install -r requirements.txt && \
     pip3 install ont-bonito==0.4.0
 
