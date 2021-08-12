@@ -4,10 +4,10 @@ FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     python3.8 \
-    python3-dev \
-    python3-pip \
-    python3-wheel \
-    python3-setuptools \
+    python3.8-dev \
+    python3.8-pip \
+    python3.8-wheel \
+    python3.8-setuptools \
     git && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
