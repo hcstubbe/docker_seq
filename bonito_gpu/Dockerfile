@@ -14,13 +14,13 @@ RUN apt-get update && \
       libz-dev
 
 
-RUN git clone https://github.com/nanoporetech/bonito.git && \
-    cd /bonito && \
-    python3 -m pip install --upgrade pip && \
+RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install setuptools && \
     python3 -m pip install wheel 
     
-RUN python3 -m pip install -r requirements.txt && \
+RUN git clone https://github.com/nanoporetech/bonito.git && \
+    cd /bonito && \
+    python3 -m pip install -r requirements.txt && \
     python3 setup.py develop && \
     bonito download --models
     
