@@ -19,9 +19,11 @@ RUN apt-get update && \
 	python3-venv
 
 RUN git clone https://github.com/nanoporetech/bonito.git && \
-    cd bonito && \
-    python3 -m venv venv3 && \
-    source venv3/bin/activate
+    cd bonito
+    
+    #&& \
+    #python3 -m venv venv3 && \
+    #source venv3/bin/activate
 
 # RUN apt-get autoremove --purge --yes && \
 #    apt-get clean
