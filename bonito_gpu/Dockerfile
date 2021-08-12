@@ -1,5 +1,5 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
-FROM nvidia/cuda:10.2-cudnn8-devel
+FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
