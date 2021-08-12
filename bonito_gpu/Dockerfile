@@ -23,7 +23,6 @@ RUN apt-get autoremove --purge --yes && \
 
 COPY requirements.txt requirements.txt
 
-RUN pip3 install -r requirements.txt && \
-    pip3 install ont-bonito==0.4.0
+RUN pip3 install -r requirements.txt
 
 # CMD ["bonito", "--input_path", "/data/fast5/", "--save_path", "/data/output/", "--flowcell", "FLO-MIN106", "--kit", "SQK-LSK109", "--min_qscore", "7", "--device", "cuda:0"]
