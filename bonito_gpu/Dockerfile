@@ -25,6 +25,6 @@ RUN pip3 install -r requirements.txt
 
 # Install the bascaller bonito 0.4.0
 # This can only be installed, if a CUDA device is present. Otherwiese, the intall will throw an error.
-# RUN pip3 install --no-cache-dir "ont-bonito==0.4.0"
+RUN pip3 install --no-cache-dir "ont-bonito==0.4.0"
 
 CMD ["bonito", "basecaller", "dna_r9.4.1", "--reference", "/mnt/1/hg38.fa", "mnt/0/data/fast5/", ">", "mnt/0/data/output/out.sam", "--min_qscore", "7", "--device", "cuda:0"]
