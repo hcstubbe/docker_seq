@@ -1,8 +1,9 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
-FROM nvidia/cuda:10.2-base-ubuntu20.04
+FROM nvidia/cuda:10.2-base-ubuntu18.04
 
 # Install required ubuntu dependencies
-RUN apt-get update && \
+RUN apt-get update && \ 
+    apt-get upgrade -y && \ 
     apt-get install -y --no-install-recommends \
       python3-minimal \
       python3-pip \
