@@ -11,13 +11,13 @@ RUN : \
     && add-apt-repository -y ppa:deadsnakes \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         zlib1g-dev \
-        python3.8-dev \
-        python3.8-venv \
+        python3-dev \
+        python3-venv \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && :
 
-RUN python3.8 -m venv /venv
+RUN python3 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
 RUN pip3 install --no-cache-dir -U install setuptools pip
