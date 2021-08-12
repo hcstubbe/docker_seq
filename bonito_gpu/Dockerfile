@@ -15,8 +15,13 @@ RUN apt-get update && \
 
 
 RUN git clone https://github.com/nanoporetech/bonito.git && \
-    cd bonito
-
+    cd /bonito && \
+    python3 -m pip install --upgrade pip && \
+    python3 -m pip install setuptools && \
+    python3 -m pip install -r requirements.txt && \
+    python3 setup.py develop && \
+    bonito download --models
+    
 # RUN apt-get autoremove --purge --yes && \
 #    apt-get clean
 
