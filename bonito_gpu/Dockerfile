@@ -25,13 +25,13 @@ RUN pip3 install --no-cache-dir "cupy-cuda102==8.6.0"
 
 # Install dependencies:
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install bonito==0.4.0
 
 
-RUN git clone https://github.com/nanoporetech/bonito.git && \
-    cd /bonito && \
-    python3 setup.py develop && \
-    bonito download --models
+#RUN git clone https://github.com/nanoporetech/bonito.git && \
+#    cd /bonito && \
+#    python3 setup.py develop && \
+#    bonito download --models
     
 # RUN apt-get autoremove --purge --yes && \
 #    apt-get clean
