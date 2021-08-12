@@ -5,18 +5,19 @@ ARG BUILD_PACKAGES="wget apt-transport-https"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get -y install $BUILD_PACKAGES libnvidia-compute-460-server && \
     apt-get -y install \
-	gzip \
-	golang \
-	git \
-	curl \
-	rsync \
-	gcc \
-	cmake \
-	python3 \
-	python3-pip \
-	python3-venv
+    wget \
+    apt-transport-https \
+    libnvidia-compute-460-server \
+    gzip \
+    golang \
+    git \
+    curl \
+    rsync \
+    gcc \
+    cmake \
+    python3 \
+    python3-pip
 
 RUN git clone https://github.com/nanoporetech/bonito.git && \
     cd bonito
