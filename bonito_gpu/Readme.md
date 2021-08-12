@@ -1,3 +1,6 @@
+## The bonito_gpu image
+The image is used for base calling [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration using the [bonito base caller](https://github.com/nanoporetech/bonito).
+
 ## Building the docker image
 The Docker image has to be ***build on a system with CUDA driver installed***. Otherwise, the installation (with cupy-cuda102==8.6.0) will throw an error. 
 
