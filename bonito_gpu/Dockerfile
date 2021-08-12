@@ -15,7 +15,8 @@ RUN apt-get update && \
 	gcc \
 	cmake \
 	python3 \
-	python3-pip
+	python3-pip \
+	python3-venv
 
 RUN git clone https://github.com/nanoporetech/bonito.git && \
     cd bonito && \
