@@ -1,9 +1,7 @@
 # Set the base image to Ubuntu 18.04 and NVIDIA GPU
-FROM nvidia/cuda:10.2-base-ubuntu18.04
+FROM nvidia/cuda:10.2-base-ubuntu20.04
 
-ARG BUILD_PACKAGES="wget apt-transport-https"
-ARG DEBIAN_FRONTEND=noninteractive
-
+# Install required ubuntu dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       python3-minimal \
@@ -12,7 +10,6 @@ RUN apt-get update && \
       build-essential \
       python3-dev \
       libz-dev
-
 
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install setuptools && \
