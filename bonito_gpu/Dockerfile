@@ -7,11 +7,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install --yes $BUILD_PACKAGES libnvidia-compute-460-server python3 python3-pip 
     
-RUN rm *.deb && \
-    apt-get autoremove --purge --yes && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-   
+RUN apt-get autoremove --purge --yes && \
+    apt-get clean
+    
 RUN pip install ont-bonito
 
 # CMD ["bonito", "--input_path", "/data/fast5/", "--save_path", "/data/output/", "--flowcell", "FLO-MIN106", "--kit", "SQK-LSK109", "--min_qscore", "7", "--device", "cuda:0"]
