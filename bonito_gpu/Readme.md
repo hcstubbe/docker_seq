@@ -1,4 +1,4 @@
-## The bonito_gpu image
+## The bonito_gpu Docker image
 The image is used for base calling [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration using the [bonito base caller](https://github.com/nanoporetech/bonito).
 
 ## Building the docker image
