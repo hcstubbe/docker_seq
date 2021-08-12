@@ -10,6 +10,6 @@ RUN apt-get update && \
 RUN apt-get autoremove --purge --yes && \
     apt-get clean
     
-RUN pip install ont-bonito
+RUN pip3 install ont-bonito
 
 # CMD ["bonito", "--input_path", "/data/fast5/", "--save_path", "/data/output/", "--flowcell", "FLO-MIN106", "--kit", "SQK-LSK109", "--min_qscore", "7", "--device", "cuda:0"]
