@@ -3,7 +3,7 @@
 ```bash
 git clone https://github.com/hcstubbe/docker_seq
 cd docker_seq/bonito_gpu
-docker build -t bonito_gpu
+docker build -t bonito_gpu .
 ```
 
 
