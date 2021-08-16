@@ -20,10 +20,8 @@ mini_assemble  -i /mnt/0/output_bonito/all.fastq
 echo "Running pmoxis tools: mini_align" 
 mkdir /mnt/0/output_mini_align
 mini_align  -i /mnt/0/output_bonito/all.fastq
-            -o /mnt/0/output_mini_align/ \
             -t $NTHREADS \
-            -r /mnt/1/hg38.fa \
-            -n
+            -r /mnt/1/hg38.fa
                
                
 echo "Done!               
