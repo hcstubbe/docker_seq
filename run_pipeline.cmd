@@ -20,3 +20,5 @@ ch-run -w ~/ccl_images/c3poa -b ~/path/to/sample/ -- sh /app/c3poa.sh 24 900 450
 ch-run -w ~/ccl_images/pyir -b ~/path/to/sample/  -b ~/path/to/ref_data/ -- sh /app/scripts/pyir.sh 24
 
 ch-run -w ~/ccl_images/longreads_stringtie -b ~/path/to/sample/  -b ~/path/to/ref_data/ -- sh /app/r2c2_stringtie.sh 24
+
+ch-run -w ~/ccl_images/longreads_stringtie -b ~/path/to/all/samples/  -b ~/path/to/ref_data/ -- sh /app/merge_abund_stringtie.sh 24
