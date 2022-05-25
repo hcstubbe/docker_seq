@@ -1,28 +1,12 @@
 # Use the base image with Ubuntu 18.04 and NVIDIA CUDA 10.2
-FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
+FROM nvidia/cuda:11.3.0-devel-ubuntu20.04
 
-# Install Ubuntu dependencies with python3 in a virtual python environment.
-RUN : \
-    && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        software-properties-common \
-    && add-apt-repository -y ppa:deadsnakes \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        zlib1g-dev \
-        python3-dev \
-        python3-venv \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && :
-RUN python3 -m venv /venv
-ENV PATH=/venv/bin:$PATH
+# Install Ubuntu dependencies
+RUN apt-get update \
+    && apt-get install -y python3 \
+	&& apt-get install -y pip
 
-# Install python dependencies of the basecaller bonito 0.4.0
-RUN pip3 install --no-cache-dir -U install setuptools pip
-RUN pip3 install --no-cache-dir "cupy-cuda102==8.6.0"
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
 
-# Install the bascaller bonito 0.4.0
-# This can only be installed, if a CUDA device is present. Otherwiese, the intall will throw an error.
-RUN pip3 install --no-cache-dir "ont-bonito==0.4.0"
+# Install the bascaller bonito 0.5.3
+RUN pip install -f https://download.pytorch.org/whl/torch_stable.html ont-bonito-cuda113
+RUN bonito download --models
