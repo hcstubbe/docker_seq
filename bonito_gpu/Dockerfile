@@ -6,7 +6,6 @@ RUN apt-get update \
     && apt-get install -y python3 \
 	&& apt-get install -y pip
 
-
 # Install the bascaller bonito 0.5.3
 RUN pip install -f https://download.pytorch.org/whl/torch_stable.html ont-bonito-cuda113
 RUN bonito download --models
