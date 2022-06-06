@@ -1,11 +1,12 @@
-# Use the base image with Ubuntu 18.04 and NVIDIA CUDA 10.2
+# Use the base image with Ubuntu 20.04 and NVIDIA CUDA 11.3
 FROM nvidia/cuda:11.3.0-devel-ubuntu20.04
 
-# Install Ubuntu dependencies
-RUN apt-get update \
-    && apt-get install -y python3 \
-	&& apt-get install -y pip
+# Install Ubuntu dependencies (0.5.3 requires specific python versions; e.g. python 3.9)
+RUN apt-get update --yes && \
+    DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends \
+        python3.9 pip && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install the bascaller bonito 0.5.3
-RUN pip install -f https://download.pytorch.org/whl/torch_stable.html ont-bonito-cuda113
+RUN pip install --no-cache-dir -f https://download.pytorch.org/whl/torch_stable.html ont-bonito-cuda113
 RUN bonito download --models
