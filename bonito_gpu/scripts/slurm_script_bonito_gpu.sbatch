@@ -12,6 +12,6 @@
  
 srun --mpi=pmi2 \
      --container-mounts=/home/ru75jul2/seq_data/CORKUM_04/:/data \
-     --container-image='hstubbe/bgpu' \
+     --container-image='hstubbe/bonito_gpu' \
      bonito basecaller dna_r9.4.1 --fastq /data/fast5 > /home/ru75jul2/seq_data/basecalls_corkum_04.fastq
 
