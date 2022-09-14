@@ -18,7 +18,7 @@ args_input = commandArgs(trailingOnly=TRUE)
         print("Not all arguments are set. Using default arguments!")
         args_input = list(n_threads=1,
                           pheno_file="./pheno_data.csv", 
-                          data_dir="~/seq_data")
+                          data_dir="~/seq_data/bg")
         }
 
       if(is.na(as.integer(args_input$n_threads)) | args_input$n_threads <= 0){
@@ -57,7 +57,7 @@ args_input = commandArgs(trailingOnly=TRUE)
 
       
       # Filter for low abundancies
-      bg_filt <- subset(bg, "rowVars(texpr(bg)) > 1", genomesubset=TRUE)
+      bg_filt <- subset(bg, "apply(texpr(bg, 'FPKM') > 1, 1, function(x) sum(x) > 0)", genomesubset=TRUE)
       
       
       
@@ -86,7 +86,7 @@ args_input = commandArgs(trailingOnly=TRUE)
       
       
       # Plot differences in transcript expression
-      plotTranscripts(ballgown::geneIDs(bg)[201100], bg, main=c('PRDM1/BLIMP-1'), sample=c('CORKUM_03','CORKUM_05','CORKUM_11', 'CORKUM_12'))
+      plotTranscripts("MSTRG.2865", bg, main=c('FCGR3A'), sample=c('CORKUM_03','CORKUM_05','CORKUM_11', 'CORKUM_12'))
       
       
 
