@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J name_str1
+#SBATCH -J name_strt2
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
 #SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --get-user-env
@@ -13,4 +13,4 @@
 
 module load charliecloud
 
-ch-run -w [path/to/image]/longreads_stringtie -b [path/to/data]:/mnt/0/  -b [path/to/ref_data]:/mnt/1/ -- sh /app/01_longread_stringtie.sh [n cores] [input filename] [ouput filename]
+ch-run -w [path/to/image]/longreads_stringtie -b [path to data base folder]:/mnt/0/ -b [path/to/ref_data]:/mnt/1/ -- sh /app/02_merge_abund_stringtie.sh [n cores] /mnt/0/
