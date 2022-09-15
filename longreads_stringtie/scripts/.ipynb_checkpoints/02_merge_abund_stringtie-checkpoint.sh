@@ -4,22 +4,23 @@
 ## Pass positional variable(s)
 NTHREADS=$1
 NTHREADS="${NTHREADS:=12}"
-echo "Processing with $NTHREADS thread(s)." 
+INPUTFOLDER=$2
+OUTPUTFOLDER=$3
+echo "Processing with $NTHREADS thread(s) files in $INPUTFOLDER (and subfolders). Results are saved in $OUTPUTFOLDER" 
 
 
 echo "Running stringtie --merge"
-mkdir /mnt/0/output_stringtie_merge
 
-find /mnt/0/ -iname out.gtf > /mnt/0/output_stringtie_merge/mergelist.txt
+find $INPUTFOLDER -iname out.gtf > $OUTPUTFOLDER/mergelist.txt
 
 # Merge transcripts from all samples
 stringtie   --merge \
 -p $NTHREADS \
 -G /mnt/1/gencode.v29.annotation.gtf \
--o /mnt/0/output_stringtie_merge/stringtie_merged.gtf \
+-o $OUTPUTFOLDER/stringtie_merged.gtf \
 -L \
 -v \
-/mnt/0/output_stringtie_merge/mergelist.txt
+$OUTPUTFOLDER/mergelist.txt
 
 echo "Running stringtie counting abundancies"	
 
