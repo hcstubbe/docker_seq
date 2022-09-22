@@ -1,6 +1,6 @@
 ## How to use the container
 ```Bash
-docker run -v c/Users/hans/Downloads/data/:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller -i /data/in -s /data/out -c dna_r10.4_e8.1_sup.cfg -x "cuda:0"
+docker run -v /path_to_data:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller -i /data/in -s /data/out -c dna_r10.4_e8.1_sup.cfg -x "cuda:0"
 ```
 
  ## Using enroot with custom docker images
