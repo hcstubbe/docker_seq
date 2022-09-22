@@ -1,7 +1,7 @@
 # Use the base image with Ubuntu 20.04 and NVIDIA CUDA 11.3
-FROM nvidia/cuda:11.3.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
 
-# Install Ubuntu dependencies (0.5.3 requires specific python versions; e.g. python 3.9)
+# Install Ubuntu dependencies
 RUN apt-get update --yes && \
     apt-get install --yes \
         pip
