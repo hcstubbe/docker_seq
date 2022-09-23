@@ -11,8 +11,8 @@
 #SBATCH --time=24:00:00
 
 DATAPATH=[/path/to/data/]
-GUPPYSCRIPT=/app/guppy_gpu_zip_dna_r10.4_e8.1_sup.sh
+GUPPYSCRIPT=guppy_gpu_zip_dna_r10.4_e8.1_sup.sh
  
 srun --mpi=pmi2 --container-mounts=$DATAPATH:/data/ \
      --container-image='hstubbe/guppy_gpu' \
-     sh $GUPPYSCRIPT
+     sh /app/$GUPPYSCRIPT
