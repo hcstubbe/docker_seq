@@ -13,4 +13,7 @@ RUN apt update  && \
 RUN apt-get update  && \
     apt-get install --no-install-recommends --yes ont-guppy
 
+RUN apt update  && \
+    apt install --yes fuse-zip
+
 RUN rm -rf /usr/lib/x86_64-linux-gnu/libnvidia* /usr/lib/x86_64-linux-gnu/libcuda*
