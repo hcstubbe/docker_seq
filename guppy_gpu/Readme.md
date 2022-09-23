@@ -1,9 +1,49 @@
 ## How to use the container
+
+Run with docker:
+
 ```Bash
-docker run -v /path_to_data:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller -i /data/in -s /data/out -c dna_r10.4_e8.1_sup.cfg -x "cuda:0"
+docker run -v $DATAPATH:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller -i [/path/to/input/fast5/] -s [/path/to/output/folder/] [aditional options]
 ```
 
- ## Using enroot with custom docker images
+Alternatively, you can use the run script as follows:
+Modify the parameter in test_run_dna_r10.4_e8.1_sup.sh and then execute.
+This will assume, that all reads are in ONE zip file in the folder specified as datafolder. The script will
+* Create a folder named as secified in RUNNAME
+* Unzip the fast5 files into a tmp folder in the folder RUNNAME
+* Basecall the dast5 files into RUNNAME/basecalled
+* Remove the tmp and fast5 folders after run completion
+
+After modifying the script run with:
+
+```Bash
+sh ./test_run_dna_r10.4_e8.1_sup.sh
+```
+
+## Using enroot with custom docker images
+If you wish to use enrrot on a comute server, modify the appropiate sbatch-script (e.g. run_enroot_zip_dna_r10.4_e8.1_sup.sbatch for the SQK-LSK112-kit (Q20) with super accurate basecalling) in /scripts and run with sbatch as follows:
+
+
+### Starting enroot container using SLURM with enroot
+
+Submitting SLURM script:
+```Bash
+sbatch [/path/to/script.sbatch]
+```
+
+
+Inspect SLURM jobs:
+```Bash
+squeue -u [USER NAME]
+```
+
+Cancel SLURM script:
+```Bash
+scancel [JOB ID]
+```
+
+
+### Other enroot commands
 To import a custom image from the [standard docker repository](https://hub.docker.com/):
 ```Bash
 enroot import --output [IMAGE NAME].sqsh docker://[USER NAME]@registry.hub.docker.com#[USERNAME]/[IMAGE NAME]
@@ -23,22 +63,4 @@ To remove all enroot containers:
 
 ```Bash
 enroot remove --force $(enroot list)
-```
-
-## Starting enroot container using SLURM
-
-Submitting SLURM script:
-```Bash
-sbatch [SCRIPT NAME].sbatch
-```
-
-
-Inspect SLURM jobs:
-```Bash
-squeue -u [USER NAME]
-```
-
-Cancel SLURM script:
-```Bash
-scancel [JOB ID]
 ```
