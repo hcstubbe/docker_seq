@@ -1,13 +1,13 @@
 ## How to use the container
 
-Run with docker:
+### Run with docker:
 
 ```Bash
 docker run -v $DATAPATH:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller -i [/path/to/input/fast5/] -s [/path/to/output/folder/] [aditional options]
 ```
-
+#### Using a bash script
 Alternatively, you can use the run script as follows:
-Modify the parameter in test_run_dna_r10.4_e8.1_sup.sh and then execute.
+Modify the parameter in bash_run_dna_r10.4_e8.1_sup.sh and then execute.
 This will assume, that all reads are in ONE zip file in the folder specified as datafolder. The script will
 * Unzip the fast5 files into a tmp folder in the specified data folder
 * Basecall the dast5 files into RUNNAME/basecalled
@@ -16,7 +16,7 @@ This will assume, that all reads are in ONE zip file in the folder specified as 
 After modifying the script run with:
 
 ```Bash
-sh ./test_run_dna_r10.4_e8.1_sup.sh
+sh ./bash_run_dna_r10.4_e8.1_sup.sh [/path/to/data/]
 ```
 
 ## Using enroot with custom docker images
