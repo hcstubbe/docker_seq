@@ -9,8 +9,7 @@ docker run -v $DATAPATH:/data --rm --gpus all hstubbe/guppy_gpu guppy_basecaller
 Alternatively, you can use the run script as follows:
 Modify the parameter in test_run_dna_r10.4_e8.1_sup.sh and then execute.
 This will assume, that all reads are in ONE zip file in the folder specified as datafolder. The script will
-* Create a folder named as secified in RUNNAME
-* Unzip the fast5 files into a tmp folder in the folder RUNNAME
+* Unzip the fast5 files into a tmp folder in the specified data folder
 * Basecall the dast5 files into RUNNAME/basecalled
 * Remove the tmp and fast5 folders after run completion
 
