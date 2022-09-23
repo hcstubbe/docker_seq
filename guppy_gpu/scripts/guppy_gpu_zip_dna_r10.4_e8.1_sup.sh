@@ -7,7 +7,8 @@ RUNNAME=$1
 
 ## Unzip fast5 files to /data/tmp/
 mkdir -p /data/$RUNNAME/tmp/
-unzip /data/*.zip /data/$RUNNAME/tmp/
+mkdir -p /data/$RUNNAME/fast5/
+unzip /data/*.zip -d /data/$RUNNAME/tmp/
 find /data/$RUNNAME/tmp/ -iname *.fast5 -exec mv {} /data/$RUNNAME/fast5/ \;
 rm -r /data/$RUNNAME/tmp/
 mkdir -p /data/$RUNNAME/basecalled/

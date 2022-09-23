@@ -10,8 +10,8 @@
 #SBATCH -e enroot.err
 #SBATCH --time=24:00:00
 
-RUNNAME=PCC1
-DATAPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/ir_seq/pcc/
+RUNNAME=[name of sequencing run in zip file]
+DATAPATH=[/path/to/data/]
 GUPPYSCRIPT=/app/guppy_gpu_zip_dna_r10.4_e8.1_sup.sh
  
 srun --mpi=pmi2 --container-mounts=$DATAPATH:/data/ \
