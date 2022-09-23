@@ -6,8 +6,8 @@
 #SBATCH --ntasks=1
 #SBATCH --mail-type=end
 #SBATCH --mail-user=hstubbe@med.lmu.de
-#SBATCH -o enroot.out
-#SBATCH -e enroot.err
+#SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
+#SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --time=24:00:00
 
 DATAPATH=[/path/to/data/]
