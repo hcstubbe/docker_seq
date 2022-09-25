@@ -16,6 +16,13 @@
 DATAPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/ir_seq/
 BARCODEPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/ir_seq/ref_data/
 
+f1=corkum/COR1
+f2=corkum/COR2
+f3=pcc/PCC1
+f4=pcc/PCC2
+
 module load charliecloud
 
-ch-run -w ~/ccl_images/pytrim2 -b $DATAPATH:/data/ -b $BARCODEPATH:/barcodes/ -- sh /app/batch_run_pytrim2.sh
+ch-run -w ~/ccl_images/pytrim2 -b $DATAPATH:/data/ -b $BARCODEPATH:/barcodes/ -- python /app/batch_run_pytrim2.sh
+
+sleep 15h

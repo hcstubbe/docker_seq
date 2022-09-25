@@ -1,11 +1,9 @@
 # Run pytrim2
 
-import sys
- 
-path_i = int(sys.argv[1])
-
-print("import pytrim2")
 from pytrim2.demultiplex import demultiplex
+import sys
+
+path_i = sys.argv[1]
 
 print("start demultiplexing of" + path_i + "/basecalled/pass/all.fastq")
 
