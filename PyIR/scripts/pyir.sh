@@ -4,17 +4,24 @@
 ## Pass positional variable(s)
 NTHREADS=$1
 NTHREADS="${NTHREADS:=12}"
+
 echo "Processing with $NTHREADS thread(s)." 
 
 echo "Running PyIR." 
 
 ## Create folders
-mkdir /mnt/0/tmp_pyir
-mkdir /mnt/0/output_pyir
+mkdir -p /data/pyir/
+FILES=find /data/ -iname *_seqs.fastq -printf "%f\n" 
 
-pyir /mnt/0/output_c3poa_postprocessing/R2C2_full_length_consensus_reads.fasta -m $NTHREADS --tmp_dir /mnt/0/tmp_pyir --enable_filter --outfmt tsv --out /mnt/0/output_pyir/pyir.csv 
 
-rm -r /mnt/0/tmp_pyir
+## Run PyIR on every fastq file in the /data/demultiplexed/ folder
+for fx in $FILES
+do
+    echo "Processing $fx..."
+    mkdir -p /data/pyir/tmp_pyir/$fx/
+    pyir /data/demultiplexed/$fx -m $NTHREADS --tmp_dir /data/pyir/tmp_pyir/$fx/ --enable_filter --outfmt tsv --out /data/pyir/$fx.pyir.csv 
+    rm -r /data/pyir/tmp_pyir/$fx/
+done
 
 echo "Done!"							
 # Exit the script

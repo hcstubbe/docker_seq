@@ -14,4 +14,12 @@
 
 module load charliecloud
 
-ch-run -w ~/ccl_images/pyir -b ~/seq_data/CORKUM_12/  -b ~/seq_data/ref_data/ -- sh /app/scripts/pyir.sh 24
+DATAPATHS="/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ir_seq/corkum/COR1/
+/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ir_seq/corkum/COR3/
+/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ir_seq/corkum/COR4/
+/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ir_seq/corkum/COR5/"
+
+for dp in $DATAPATHS
+do
+    ch-run -w ~/ccl_images/pyir -b $dp  -- sh /app/scripts/pyir.sh 24
+done
