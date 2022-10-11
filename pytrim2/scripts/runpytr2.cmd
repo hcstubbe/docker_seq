@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J pytrim2_batch
+#SBATCH -J adv_pt2
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
 #SBATCH -e ./seq_data/logfiles/%x.%j.%N.error
 #SBATCH --get-user-env
@@ -23,6 +23,12 @@ module load charliecloud
 
 for i in $INPUTPATHS
 do
+    sh ~/ccl_images/pytrim2/app/catfq.sh $DATAPATH/$i/
+done
+
+for i in $INPUTPATHS
+do
+    mkdir -p i/demultiplexed/
     (ch-run -w ~/ccl_images/pytrim2 -b $DATAPATH:/data/ -b $BARCODEPATH:/barcodes/ -- python /app/pytr2.py $i & )
 done
 

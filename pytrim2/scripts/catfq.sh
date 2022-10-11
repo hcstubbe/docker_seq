@@ -1,7 +1,15 @@
 #!/bin/bash
 
-PATH=$1/basecalled/pass/
+INPATH=$1/basecalled/pass
 
-find /data/$PATH -iname *.fastq -exec cat {} >> $PATH/all.fastq \;
+cd $INPATH
+
+FILES="*.fastq"
+for f in $FILES
+do
+  echo "Concatenating $f file..."
+  # take action on each file. $f store current file name
+  cat "$f" >> ./all.fastq
+done
 
 exit
