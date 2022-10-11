@@ -21,14 +21,10 @@ mock"
 
 module load charliecloud
 
-for i in $INPUTPATHS
-do
-    sh ~/ccl_images/pytrim2/app/catfq.sh $DATAPATH/$i/
-done
 
 for i in $INPUTPATHS
 do
-    mkdir -p i/demultiplexed/
+    ( mkdir -p $DATAPATH/$i/demultiplexed/ )
     (ch-run -w ~/ccl_images/pytrim2 -b $DATAPATH:/data/ -b $BARCODEPATH:/barcodes/ -- python /app/pytr2.py $i & )
 done
 
