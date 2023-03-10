@@ -10,7 +10,7 @@
 - ballgown: plotting and differential expression analysis of stringtie results using [ballgown](https://bioconductor.org/packages/release/bioc/html/ballgown.html)
 
 ## How to run the pipeline
-- Run the docker containers on the data folder in the following order: (1) guppy_gpu OR bonito_gpu, (2) c3poa, (3) PyIR, (4) longread_stringtie, and (5) ballgown. The images need to be mounted on the sample's path (e.g. ~/path/to/sample/):
+- Run the docker containers on the data folder in the following order: (1) guppy_gpu OR bonito_gpu, (2, if you used the R2C2 pipeline) c3poa, (3) PyIR, (4) longread_stringtie, and (5) ballgown. The images need to be mounted on the sample's path (e.g. ~/path/to/sample/):
   - The data needs to be base called using the guppy_gpu OR bonito_gpu (this is separated for basecalling on a gpu cluster; see documentation [here for bonito](https://github.com/hcstubbe/docker_seq/tree/main/bonito_gpu) or [here for guppy](https://github.com/hcstubbe/docker_seq/tree/main/guppy_gpu))
   - On a SLURM managed cluster after installing the images as charliecloud images (see below) and after basecalling:
     - Run the SLURM script [01_run_pipeline.cmd](https://github.com/hcstubbe/docker_seq/blob/main/01_run_pipeline.cmd) on EACH sample
