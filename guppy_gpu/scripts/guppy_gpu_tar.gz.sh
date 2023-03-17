@@ -3,21 +3,32 @@
 GUPPYSCRIPT=$1
 
 
-## Untar and decompress fast5 files to /data/tmp/
-mkdir -p /data/tmp/
-mkdir -p /data/tmp_fast5/
-mkdir -p /data/reports/
-tar -xzf /data/*.tar.gz -C /data/tmp/
-find /data/tmp/ -iname *.pdf -exec mv {} /data/reports/ \;
-find /data/tmp/ -iname *.html -exec mv {} /data/reports/ \;
-find /data/tmp/ -iname *.fast5 -exec mv {} /data/tmp_fast5/ \;
-rm -r /data/tmp/
-mkdir -p /data/basecalled/
+## Untar and decompress fast5 files to /mnt/data/tmp/
+print "Creating directories for fast5 files and reports..."
+mkdir -p /mnt/data/tmp/
+mkdir -p /mnt/data/tmp_fast5/
+mkdir -p /mnt/data/reports/
+
+print "Start decompressing fast5 files..."
+tar -xzvf /mnt/data/*.tar.gz -C /mnt/data/tmp/
+
+print "Sort files into appropriate folders..."
+find /mnt/data/tmp/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/tmp/ -iname *.html -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/tmp/ -iname *.fast5 -exec mv {} /mnt/data/tmp_fast5/ \;
+
+print "Remove tmp folder..."
+rm -r /mnt/data/tmp/
+
+print "Create folder for bascalled files"
+mkdir -p /mnt/data/basecalled/
 
 
 ## Run the basecaller
-guppy_basecaller -i /data/tmp_fast5/ -s /data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0" --do_read_splitting
+print "Running basecaller..."
+guppy_basecaller -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0" --do_read_splitting
 
 
 ## Remove the unzipped fast5 files
-rm -r /data/tmp_fast5/
+print "Removing tmp_fast5 folder"
+rm -r /mnt/data/tmp_fast5/
