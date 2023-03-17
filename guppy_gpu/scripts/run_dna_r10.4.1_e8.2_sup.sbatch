@@ -14,4 +14,4 @@ INPUTTYPE=tar.gz ## zip, tar.gz or fast5
  
 srun --container-mounts=$DATAPATH:/data/ \
      --container-image='hstubbe/guppy_gpu:v6.4.6' \
-     sh /app/guppy_gpu_$INPUTTYPE.sh $GUPPYCFG
+     bash /app/guppy_gpu_$INPUTTYPE.sh $GUPPYCFG
