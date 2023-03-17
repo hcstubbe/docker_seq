@@ -16,7 +16,7 @@ mkdir -p /data/basecalled/
 
 
 ## Run the basecaller
-guppy_basecaller -i /data/tmp_fast5/ -s /data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0"
+guppy_basecaller -i /data/tmp_fast5/ -s /data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0" --do_read_splitting
 
 
 ## Remove the unzipped fast5 files
