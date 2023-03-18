@@ -2,7 +2,6 @@
 #SBATCH -J adi_mock
 #SBATCH -p lrz-dgx-a100-80x8
 #SBATCH --gres=gpu:1
-#SBATCH --ntasks=1
 #SBATCH --mail-type=end
 #SBATCH --mail-user=hstubbe@med.lmu.de
 #SBATCH -o ./seq_data/logfiles/%x.%j.%N.out
