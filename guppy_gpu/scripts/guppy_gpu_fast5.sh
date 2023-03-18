@@ -3,18 +3,18 @@
 GUPPYSCRIPT=$1
 
 
-## Move fast5 files to /data/tmp/
-mkdir -p /data/tmp_fast5/
-mkdir -p /data/reports/
-find /data/ -iname *.pdf -exec mv {} /data/reports/ \;
-find /data/ -iname *.html -exec mv {} /data/reports/ \;
-find /data/ -iname *.fast5 -exec mv {} /data/tmp_fast5/ \;
-mkdir -p /data/basecalled/
+## Move fast5 files to /mnt/data/tmp/
+mkdir -p /mnt/data/tmp_fast5/
+mkdir -p /mnt/data/reports/
+find /mnt/data/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/ -iname *.html -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/ -iname *.fast5 -exec mv {} /mnt/data/tmp_fast5/ \;
+mkdir -p /mnt/data/basecalled/
 
 
 ## Run the basecaller
-guppy_basecaller -i /data/tmp_fast5/ -s /data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0" --do_read_splitting
+guppy_basecaller -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0" --do_read_splitting
 
 
 ## Do NOT remove the fast5 files
-# rm -r /data/tmp_fast5/
+# rm -r /mnt/data/tmp_fast5/
