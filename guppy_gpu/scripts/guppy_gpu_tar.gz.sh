@@ -10,7 +10,7 @@ mkdir -p /mnt/data/tmp_fast5/
 mkdir -p /mnt/data/reports/
 
 print "Start decompressing fast5 files..."
-tar -xzvf /mnt/data/*.tar.gz
+tar -xzvf /mnt/data/*.tar.gz -C /mnt/data/tmp/
 
 print "Sort files into appropriate folders..."
 find /mnt/data/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
