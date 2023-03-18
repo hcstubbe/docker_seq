@@ -10,15 +10,12 @@ mkdir -p /mnt/data/tmp_fast5/
 mkdir -p /mnt/data/reports/
 
 print "Start decompressing fast5 files..."
-tar -xzvf /mnt/data/*.tar.gz -C /mnt/data/tmp/
+tar -xzvf /mnt/data/*.tar.gz
 
 print "Sort files into appropriate folders..."
-find /mnt/data/tmp/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
-find /mnt/data/tmp/ -iname *.html -exec mv {} /mnt/data/reports/ \;
-find /mnt/data/tmp/ -iname *.fast5 -exec mv {} /mnt/data/tmp_fast5/ \;
-
-print "Remove tmp folder..."
-rm -r /mnt/data/tmp/
+find /mnt/data/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/ -iname *.html -exec mv {} /mnt/data/reports/ \;
+find /mnt/data/ -iname *.fast5 -exec mv {} /mnt/data/tmp_fast5/ \;
 
 print "Create folder for bascalled files"
 mkdir -p /mnt/data/basecalled/
