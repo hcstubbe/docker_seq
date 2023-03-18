@@ -2,7 +2,7 @@
 
 GUPPYSCRIPT=$1
 
-find . -type f -name "*dna_r10.4.1_e8.2_260bps*" > /mnt/data/models.txt
+dir -lh /opt/ont/guppy/data/ > /mnt/data/models.txt
 
 ## Move fast5 files to /mnt/data/tmp/
 mkdir -p /mnt/data/tmp_fast5/
