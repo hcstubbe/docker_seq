@@ -14,5 +14,5 @@ GUPPYCFG=dna_r10.4.1_e8.2_260bps_sup.cfg ## e.g. dna_r10.4.1_e8.2_260bps_sup.cfg
 INPUTTYPE=fast5 ## zip, tar.gz or fast5
  
 srun --mpi=pmi2 --container-mounts=$DATAPATH:/mnt/data \
-     --container-image='hstubbe/guppy_gpu:6.3.7' \
+     --container-image='hstubbe/guppy_gpu:v6.4.6' \
      bash /app/guppy_gpu_$INPUTTYPE.sh $GUPPYCFG
