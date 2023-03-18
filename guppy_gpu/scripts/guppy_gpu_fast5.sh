@@ -14,7 +14,7 @@ mkdir -p /mnt/data/basecalled/
 
 
 ## Run the basecaller
-guppy_basecaller -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0"
+guppy_basecaller -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ --config dna_r10.4.1_e8.2_260bps_hac_prom.cfg -x "cuda:0"
 
 
 ## Do NOT remove the fast5 files
