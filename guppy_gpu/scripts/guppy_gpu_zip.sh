@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GUPPYSCRIPT=$1
+GUPPYCFG=$1
 
 
 ## Unzip fast5 files to /mnt/data/tmp/
@@ -16,7 +16,7 @@ mkdir -p /mnt/data/basecalled/
 
 
 ## Run the basecaller
-guppy_basecaller --do_read_splitting -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ -c $GUPPYSCRIPT -x "cuda:0"
+guppy_basecaller -i /mnt/data/tmp_fast5/ -s /mnt/data/basecalled/ -c $GUPPYCFG --do_read_splitting -x "cuda:0"
 
 
 ## Remove the unzipped fast5 files
