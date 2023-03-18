@@ -19,3 +19,6 @@ RUN apt update  && \
 RUN rm -rf /usr/lib/x86_64-linux-gnu/libnvidia* /usr/lib/x86_64-linux-gnu/libcuda*
 
 COPY scripts /app/
+
+RUN mkdir -p /app/guppy_cfg/
+RUN cp /opt/ont/guppy/data/*.cfg /app/guppy_cfg/
