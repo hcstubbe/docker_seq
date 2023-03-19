@@ -13,11 +13,14 @@
 #SBATCH --time=16:00:00
 
 
-DATAPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/adv/raw/spheres/
+DATAPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/adv/raw_adv_infection/basecalled/pass
 BARCODEPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ref_data/
 
-INPUTPATHS="e2a
-mock"
+INPUTPATHS="sub1
+sub2
+sub3
+sub4
+sub5"
 
 module load charliecloud
 
