@@ -26,7 +26,7 @@ module load charliecloud
 
 for i in $INPUTPATHS
 do
-    (sh ~/ccl_images/pytrim2/app/catfq.sh $DATAPATH/$i/ & )
+    sh ~/ccl_images/pytrim2/app/catfq.sh $DATAPATH/$i/
 done
 
 for i in $INPUTPATHS
