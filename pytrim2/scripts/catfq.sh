@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INPATH=$1/basecalled/pass
+INPATH=$1
 
 cd $INPATH
 
