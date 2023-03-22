@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DATAPATH=$1
-SBATCHFILE=$2
+DATAPATH=/dss/dssfs02/lwp-dss-0001/u7x81/u7x81-dss-0000/ru75jul2/seq_data/ir_seq/pcc_r1041
+SBATCHFILE=./run_dna_r10.4.1_e8.2_sup.sbatch
 
 ## Untar and decompress fast5 files to $DATAPATH/tmp/
 print "Creating directories for fast5 files and reports..."
