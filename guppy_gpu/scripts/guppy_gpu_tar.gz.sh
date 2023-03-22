@@ -13,6 +13,7 @@ print "Start decompressing fast5 files..."
 tar -xzvf /mnt/data/*.tar.gz -C /mnt/data/tmp/
 
 print "Sort files into appropriate folders..."
+find /mnt/data/ -iname *.csv -exec mv {} /mnt/data/reports/ \;
 find /mnt/data/ -iname *.pdf -exec mv {} /mnt/data/reports/ \;
 find /mnt/data/ -iname *.html -exec mv {} /mnt/data/reports/ \;
 find /mnt/data/ -iname *.fast5 -exec mv {} /mnt/data/tmp_fast5/ \;
