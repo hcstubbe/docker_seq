@@ -1,7 +1,6 @@
+[![DOI](https://zenodo.org/badge/379731397.svg)](https://zenodo.org/doi/10.5281/zenodo.13166972)
 # docker_seq
  Dockerfiles for sequencing data pipeline
-
-[![DOI](https://zenodo.org/badge/379731397.svg)](https://zenodo.org/doi/10.5281/zenodo.13166972)
 
 ## Docker images
 - guppy_gpu: base calling of [ONT](https://nanoporetech.com/) minion raw data with gpu acceleration
